@@ -1,56 +1,75 @@
-import "./App.css";
-
-export default function App() {
+function App() {
   return (
-    <div className="container">
-      <header>
-        <h1>Hi, I'm Nilay 👋</h1>
-        <p>DevOps Engineer | AWS | Docker | Linux | CI/CD</p>
-      </header>
+    <div style={{
+      fontFamily: "Arial, sans-serif",
+      backgroundColor: "#0d1117",
+      color: "white",
+      minHeight: "100vh",
+      padding: "50px 20px",
+    }}>
+      
+      <div style={{ maxWidth: "900px", margin: "auto" }}>
+        
+        {/* Header */}
+        <h1 style={{ fontSize: "48px", fontWeight: "bold", marginBottom: "10px" }}>
+          Hi, I'm <span style={{ color: "#58a6ff" }}>Nilay Chavhan 👋</span>
+        </h1>
 
-      <section>
-        <h2>About Me</h2>
-        <p>
-          I am a DevOps enthusiast passionate about automation, cloud infrastructure,
-          containerization, and CI/CD pipelines. I enjoy deploying applications
-          using AWS EC2, Docker, GitHub Actions, and Nginx.
+        <h2 style={{ fontSize: "28px", fontWeight: "normal", color: "#c9d1d9" }}>
+          DevOps Engineer | AWS | Docker | CI/CD | Linux
+        </h2>
+
+        <p style={{ fontSize: "18px", marginTop: "20px", lineHeight: "1.6", color: "#8b949e" }}>
+          I build scalable modern infrastructure using DevOps tools like Docker, GitHub Actions, 
+          AWS EC2, Nginx, Linux & CI/CD pipelines.  
+          This portfolio is fully automated and deployed through Docker & GitHub Actions.
         </p>
-      </section>
 
-      <section>
-        <h2>Skills</h2>
-        <ul>
-          <li>AWS EC2, S3, IAM</li>
-          <li>Docker & Docker Compose</li>
-          <li>Linux & Shell Scripting</li>
-          <li>Nginx Reverse Proxy</li>
-          <li>GitHub Actions (CI/CD)</li>
-          <li>Python Basics</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Projects</h2>
-
-        <div className="card">
-          <h3>DevOps Portfolio Website</h3>
-          <p>Built with React + Vite and deployed using Docker on AWS EC2.</p>
+        {/* Skills Section */}
+        <div style={{
+          marginTop: "40px",
+          padding: "20px",
+          backgroundColor: "#161b22",
+          borderRadius: "10px",
+        }}>
+          <h3 style={{ fontSize: "24px", marginBottom: "15px" }}>🚀 Skills</h3>
+          <ul style={{ fontSize: "18px", lineHeight: "1.8" }}>
+            <li>🐳 Docker & Containerization</li>
+            <li>⚙️ CI/CD using GitHub Actions</li>
+            <li>☁️ AWS (EC2, S3, Networking)</li>
+            <li>🖥 Linux, Shell Scripting, Server Setup</li>
+            <li>🌐 Nginx, Reverse Proxy, Hosting</li>
+            <li>🛠 Git, SSH, Automation</li>
+          </ul>
         </div>
 
-        <div className="card">
-          <h3>CI/CD Pipeline</h3>
-          <p>Automated build & deploy pipeline using GitHub Actions.</p>
+        {/* Projects */}
+        <div style={{
+          marginTop: "40px",
+          padding: "20px",
+          backgroundColor: "#161b22",
+          borderRadius: "10px",
+        }}>
+          <h3 style={{ fontSize: "24px", marginBottom: "15px" }}>📂 Featured Projects</h3>
+          
+          <ul style={{ fontSize: "18px", lineHeight: "1.8" }}>
+            <li><b>🌐 DevOps Portfolio</b> — Docker + Nginx + EC2 + CI/CD Automated Deployments</li>
+            <li><b>🔄 GitHub Actions Pipeline</b> — Full automation with SSH deploy</li>
+            <li><b>☁️ AWS Hosting Setup</b> — Secure production server deployed on EC2</li>
+          </ul>
         </div>
 
-        <div className="card">
-          <h3>Monitoring Setup</h3>
-          <p>Grafana + Node Exporter based monitoring on Linux server.</p>
+        {/* Contact */}
+        <div style={{ marginTop: "40px", textAlign: "center" }}>
+          <h3 style={{ fontSize: "24px" }}>📬 Contact</h3>
+          <p style={{ fontSize: "18px", color: "#8b949e" }}>
+            Email: <b>nilaychavhan@gmail.com</b>
+          </p>
         </div>
-      </section>
 
-      <footer>
-        <p>Made with ❤️ by Nilay</p>
-      </footer>
+      </div>
     </div>
   );
 }
+
+export default App;
