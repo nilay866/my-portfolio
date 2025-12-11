@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, #111 0%, #000 70%);
+  padding: 20px;
+}
+
+.hero-content {
+  max-width: 700px;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.title span {
+  background: linear-gradient(90deg, #4d9fff, #00eaff);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  font-size: 1.4rem;
+  opacity: 0.7;
+}
+
+.desc {
+  margin-top: 10px;
+  font-size: 1rem;
+  opacity: 0.8;
+}
+
+.buttons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.primary {
+  background: #007bff;
+  color: white;
+}
+
+.secondary {
+  border: 1px solid #fff;
+  color: white;
+}
+
+#skills {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.skills-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+}
+
+.skill {
+  padding: 16px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  background: #111;
+  transition: 0.25s;
+}
+
+.skill:hover {
+  background: #1e1e1e;
+  transform: translateY(-5px);
+}
