@@ -1,109 +1,13 @@
-body {
-  background: #0d1117;
-  color: #e6edf3;
-  font-family: "Segoe UI", sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-/* MAIN LAYOUT */
-.main {
-  max-width: 900px;
-  margin: auto;
-  padding: 20px;
-  animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* HERO SECTION */
-.hero {
-  text-align: center;
-  margin-top: 40px;
-  margin-bottom: 50px;
-}
-
-.highlight {
-  color: #4f9eff;
-}
-
-.subtitle {
-  color: #8b949e;
-}
-
-.summary {
-  max-width: 600px;
-  margin: auto;
-  padding: 10px 0;
-  color: #9ba3b4;
-}
-
-.socials a {
-  color: #58a6ff;
-  margin: 10px;
-  transition: 0.3s;
-}
-
-.socials a:hover {
-  color: white;
-}
-
-/* SECTION TITLES */
-.section-title {
-  font-size: 24px;
-  color: #4f9eff;
-  border-left: 4px solid #4f9eff;
-  padding-left: 10px;
-  margin-bottom: 20px;
-}
-
-/* SKILLS GRID */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
-}
-
-.skill-card {
-  background: #161b22;
-  padding: 15px;
-  text-align: center;
-  border-radius: 8px;
-  transition: 0.3s;
-  border: 1px solid #21262d;
-}
-
-.skill-card:hover {
-  transform: translateY(-5px);
-  background: #1f242d;
-}
-
-/* PROJECT CARDS */
-.project-card {
-  background: #161b22;
-  padding: 20px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  border: 1px solid #21262d;
-  transition: 0.3s;
-}
-
-.project-card:hover {
-  background: #1f242d;
-  transform: translateY(-3px);
-}
-
-/* CONTACT */
-.contact-item a {
-  color: #4f9eff;
-}
-
-/* FOOTER */
-.footer {
-  text-align: center;
-  margin-top: 40px;
-  color: #8b949e;
+export default function Navbar() {
+  return (
+    <nav className="navbar">
+      <h2 className="logo">Nilay</h2>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  );
 }
