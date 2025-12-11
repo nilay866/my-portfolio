@@ -1,18 +1,27 @@
-# Step 1: Build Stage (Vite Build)
+# 1. Install dependencies
+FROM node:20-alpine AS deps
+WORKDIR /app
+COPY package*.json ./
+RUN npm install --frozen-lockfile
+
+# 2. Build the Next.js app
 FROM node:20-alpine AS builder
 WORKDIR /app
-
-COPY package*.json ./
-RUN npm install
-
 COPY . .
+COPY --from=deps /app/node_modules ./node_modules
 RUN npm run build
 
-# Step 2: Nginx Serve Stage
-FROM nginx:alpine
+# 3. Production Image
+FROM node:20-alpine AS runner
+WORKDIR /app
 
-COPY --from=builder /app/dist /usr/share/nginx/html
+ENV NODE_ENV=production
 
-EXPOSE 80
+COPY --from=builder /app/public ./public
+COPY --from=builder /app/.next/standalone ./
+COPY --from=builder /app/.next/static ./public/_next/static
 
-CMD ["nginx", "-g", "daemon off;"]
+EXPOSE 3000
+ENV PORT=3000
+
+CMD ["node", "server.js"]
