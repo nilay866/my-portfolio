@@ -1,56 +1,55 @@
-import "./App.css";
+body {
+  font-family: Arial, sans-serif;
+  background: #0d1117;
+  color: #e6edf3;
+  margin: 0;
+  padding: 0;
+}
 
-export default function App() {
-  return (
-    <div className="container">
-      <header>
-        <h1>Hi, I'm Nilay 👋</h1>
-        <p>DevOps Engineer | AWS | Docker | Linux | CI/CD</p>
-      </header>
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
 
-      <section>
-        <h2>About Me</h2>
-        <p>
-          I am a DevOps enthusiast passionate about automation, cloud infrastructure,
-          containerization, and CI/CD pipelines. I enjoy deploying applications
-          using AWS EC2, Docker, GitHub Actions, and Nginx.
-        </p>
-      </section>
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
-      <section>
-        <h2>Skills</h2>
-        <ul>
-          <li>AWS EC2, S3, IAM</li>
-          <li>Docker & Docker Compose</li>
-          <li>Linux & Shell Scripting</li>
-          <li>Nginx Reverse Proxy</li>
-          <li>GitHub Actions (CI/CD)</li>
-          <li>Python Basics</li>
-        </ul>
-      </section>
+.highlight {
+  color: #58a6ff;
+}
 
-      <section>
-        <h2>Projects</h2>
+.subtext {
+  font-size: 18px;
+  margin-top: -10px;
+  color: #8b949e;
+}
 
-        <div className="card">
-          <h3>DevOps Portfolio Website</h3>
-          <p>Built with React + Vite and deployed using Docker on AWS EC2.</p>
-        </div>
+.section {
+  margin-bottom: 40px;
+}
 
-        <div className="card">
-          <h3>CI/CD Pipeline</h3>
-          <p>Automated build & deploy pipeline using GitHub Actions.</p>
-        </div>
+.section h3 {
+  color: #58a6ff;
+  border-bottom: 1px solid #30363d;
+  padding-bottom: 5px;
+}
 
-        <div className="card">
-          <h3>Monitoring Setup</h3>
-          <p>Grafana + Node Exporter based monitoring on Linux server.</p>
-        </div>
-      </section>
+.skills li {
+  margin: 8px 0;
+}
 
-      <footer>
-        <p>Made with ❤️ by Nilay</p>
-      </footer>
-    </div>
-  );
+.project-card {
+  padding: 15px;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  background: #161b22;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #8b949e;
 }

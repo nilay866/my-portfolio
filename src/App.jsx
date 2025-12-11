@@ -1,73 +1,67 @@
+import "./App.css";
+
 function App() {
   return (
-    <div style={{
-      fontFamily: "Arial, sans-serif",
-      backgroundColor: "#0d1117",
-      color: "white",
-      minHeight: "100vh",
-      padding: "50px 20px",
-    }}>
-      
-      <div style={{ maxWidth: "900px", margin: "auto" }}>
-        
-        {/* Header */}
-        <h1 style={{ fontSize: "48px", fontWeight: "bold", marginBottom: "10px" }}>
-          Hi, I'm <span style={{ color: "#58a6ff" }}>Nilay Chavhan 👋</span>
-        </h1>
+    <div className="container">
+      {/* HEADER */}
+      <header className="header">
+        <h1>Hi, I'm <span className="highlight">Nilay Chavhan</span> 👋</h1>
+        <h2 className="subtext">DevOps Engineer | AWS | Docker | Linux | CI/CD</h2>
+      </header>
 
-        <h2 style={{ fontSize: "28px", fontWeight: "normal", color: "#c9d1d9" }}>
-          DevOps Engineer | AWS | Docker | CI/CD | Linux
-        </h2>
-
-        <p style={{ fontSize: "18px", marginTop: "20px", lineHeight: "1.6", color: "#8b949e" }}>
-          I build scalable modern infrastructure using DevOps tools like Docker, GitHub Actions, 
-          AWS EC2, Nginx, Linux & CI/CD pipelines.  
-          This portfolio is fully automated and deployed through Docker & GitHub Actions.
+      {/* ABOUT SECTION */}
+      <section className="section">
+        <h3>About Me</h3>
+        <p>
+          I am a DevOps Engineer passionate about automation, cloud infrastructure,
+          containerization, CI/CD pipelines, monitoring, and server deployments.
+          I enjoy building scalable systems using Docker, AWS, Nginx, and GitHub Actions.
         </p>
+      </section>
 
-        {/* Skills Section */}
-        <div style={{
-          marginTop: "40px",
-          padding: "20px",
-          backgroundColor: "#161b22",
-          borderRadius: "10px",
-        }}>
-          <h3 style={{ fontSize: "24px", marginBottom: "15px" }}>🚀 Skills</h3>
-          <ul style={{ fontSize: "18px", lineHeight: "1.8" }}>
-            <li>🐳 Docker & Containerization</li>
-            <li>⚙️ CI/CD using GitHub Actions</li>
-            <li>☁️ AWS (EC2, S3, Networking)</li>
-            <li>🖥 Linux, Shell Scripting, Server Setup</li>
-            <li>🌐 Nginx, Reverse Proxy, Hosting</li>
-            <li>🛠 Git, SSH, Automation</li>
-          </ul>
-        </div>
+      {/* SKILLS */}
+      <section className="section">
+        <h3>Skills</h3>
+        <ul className="skills">
+          <li>🚀 AWS (EC2, S3, IAM)</li>
+          <li>🐳 Docker & Docker Compose</li>
+          <li>⚙️ Linux & Shell Scripting</li>
+          <li>🔁 GitHub Actions (CI/CD)</li>
+          <li>🌀 Nginx Reverse Proxy</li>
+          <li>🐍 Python Basics</li>
+        </ul>
+      </section>
 
-        {/* Projects */}
-        <div style={{
-          marginTop: "40px",
-          padding: "20px",
-          backgroundColor: "#161b22",
-          borderRadius: "10px",
-        }}>
-          <h3 style={{ fontSize: "24px", marginBottom: "15px" }}>📂 Featured Projects</h3>
-          
-          <ul style={{ fontSize: "18px", lineHeight: "1.8" }}>
-            <li><b>🌐 DevOps Portfolio</b> — Docker + Nginx + EC2 + CI/CD Automated Deployments</li>
-            <li><b>🔄 GitHub Actions Pipeline</b> — Full automation with SSH deploy</li>
-            <li><b>☁️ AWS Hosting Setup</b> — Secure production server deployed on EC2</li>
-          </ul>
-        </div>
-
-        {/* Contact */}
-        <div style={{ marginTop: "40px", textAlign: "center" }}>
-          <h3 style={{ fontSize: "24px" }}>📬 Contact</h3>
-          <p style={{ fontSize: "18px", color: "#8b949e" }}>
-            Email: <b>nilaychavhan@gmail.com</b>
+      {/* PROJECTS */}
+      <section className="section">
+        <h3>Projects</h3>
+        <div className="project-card">
+          <h4>🌐 DevOps Portfolio Website</h4>
+          <p>
+            Built with React + Vite and deployed using Docker on AWS EC2.
+            Implemented CI/CD pipeline using GitHub Actions for automated deployment.
           </p>
         </div>
+      </section>
 
-      </div>
+      {/* CONTACT */}
+      <section className="section">
+        <h3>Contact</h3>
+        <p>📧 Email: <a href="mailto:nilaychavhan@gmail.com">nilaychavhan@gmail.com</a></p>
+        <p>🔗 LinkedIn:  
+          <a 
+            href="https://www.linkedin.com/in/nilay-chavhan-272271188" 
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            linkedin.com/in/nilay-chavhan
+          </a>
+        </p>
+      </section>
+
+      <footer className="footer">
+        <p>© {new Date().getFullYear()} Nilay Chavhan — DevOps Portfolio</p>
+      </footer>
     </div>
   );
 }
