@@ -12,22 +12,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Copy files to EC2 (excluding .git and node_modules)
+      - name: Copy files to EC2
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
-          source: "./"
+          source: "./*"
           target: "/home/ubuntu/my-portfolio"
-          rm: true
-          strip_components: 0
-          tar_tmp_path: "/tmp"
-          # IMPORTANT: ignore unnecessary folders
-          exclude: |
-            .git/
-            node_modules/
-            .github/
 
       - name: Deploy on EC2
         uses: appleboy/ssh-action@v0.1.6
