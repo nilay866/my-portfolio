@@ -1,97 +1,139 @@
-import React from "react";
+import { useState } from "react";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0a0f14] to-[#0d1117] text-white px-6 py-10 font-sans">
+    <div className="min-h-screen bg-[#0b0f13] text-white font-sans px-6 py-10">
 
-      {/* Animated Header */}
-      <header className="max-w-5xl mx-auto text-center mb-16">
-        <h1 className="text-5xl md:text-6xl font-extrabold mb-4 animate-pulse">
-          Hi, I'm <span className="text-blue-500 drop-shadow-lg">Nilay Chavhan</span> 👋
+      {/* HERO SECTION */}
+      <section className="text-center py-16">
+        <h1 className="text-6xl font-extrabold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent animate-pulse drop-shadow-lg">
+          Nilay Chavhan
         </h1>
 
-        <h2 className="text-2xl md:text-3xl text-gray-300 font-light">
-          DevOps Engineer • Cloud Automation • CI/CD Specialist
+        <p className="text-2xl text-gray-300 mt-4">
+          DevOps Engineer • Cloud • Automation • CI/CD • SRE
+        </p>
+
+        <p className="text-gray-400 max-w-2xl mx-auto mt-4">
+          I automate deployments, scale cloud infrastructure, and build reliable CI/CD pipelines.
+          Passionate about cloud-native solutions and DevOps excellence.
+        </p>
+
+        <div className="mt-8 flex justify-center gap-6">
+          <a
+            href="/resume.pdf"
+            className="px-6 py-3 bg-blue-600 rounded-lg hover:bg-blue-700 transition"
+          >
+            📄 Download Resume
+          </a>
+          <a
+            href="mailto:nilaychavhan@gmail.com"
+            className="px-6 py-3 bg-purple-600 rounded-lg hover:bg-purple-700 transition"
+          >
+            📬 Contact Me
+          </a>
+        </div>
+      </section>
+
+      {/* DEVOPS PIPELINE */}
+      <section className="mt-20 max-w-5xl mx-auto">
+        <h2 className="text-4xl font-bold text-blue-400 mb-6 text-center">
+          🚀 DevOps Pipeline I Built
         </h2>
 
-        <p className="text-gray-400 mt-4 text-lg">
-          Automating deployments, scaling cloud infra & delivering reliable software pipelines.
-        </p>
-      </header>
-
-      {/* Skills Section */}
-      <section className="max-w-5xl mx-auto mb-16">
-        <h3 className="text-3xl font-semibold mb-6 text-blue-400">Tech Stack</h3>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <div className="grid md:grid-cols-4 gap-6 text-center">
           {[
-            "Docker",
-            "Kubernetes",
-            "AWS EC2",
-            "GitHub Actions",
-            "Jenkins",
-            "Linux",
-            "Nginx",
-            "Terraform",
-            "Prometheus",
-            "Grafana",
-            "Ansible",
-            "CI/CD Pipelines"
-          ].map((skill) => (
+            "GitHub → Code Commit",
+            "GitHub Actions → CI Build",
+            "SCP to EC2 via SSH",
+            "Docker + Nginx → LIVE Deploy",
+          ].map((step, idx) => (
             <div
-              key={skill}
-              className="bg-[#161b22] border border-gray-700 py-4 rounded-lg text-center 
-              hover:border-blue-500 hover:scale-105 transition transform duration-300 shadow-md"
+              key={idx}
+              className="p-6 bg-[#141a21] border border-gray-700 rounded-xl hover:border-blue-500 shadow-md hover:scale-105 transition"
             >
-              {skill}
+              <p className="text-lg">{step}</p>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Project Section */}
-      <section className="max-w-5xl mx-auto mb-16">
-        <h3 className="text-3xl font-semibold mb-6 text-green-400">
-          🚀 Featured DevOps Project
-        </h3>
+      {/* TECH STACK */}
+      <section className="mt-20 max-w-5xl mx-auto">
+        <h2 className="text-4xl font-bold text-green-400 mb-6 text-center">
+          🛠 Tech Stack
+        </h2>
 
-        <div className="bg-[#161b22] border border-gray-700 p-8 rounded-xl shadow-xl hover:shadow-blue-500/20 transition">
-          <h4 className="text-2xl font-bold mb-4">Automated CI/CD Deployment Pipeline</h4>
-
-          <p className="text-gray-400 text-lg mb-6">
-            Built a production-grade CI/CD pipeline using Docker, GitHub Actions and AWS EC2.
-            Whenever I push code → GitHub Actions → builds → SCP → EC2 → Dockerized deployment.
-          </p>
-
-          <ul className="list-disc text-gray-300 pl-6 space-y-2">
-            <li>Zero-downtime automated deployment</li>
-            <li>Docker + Nginx container serving React app</li>
-            <li>Auto-build on every Git push</li>
-            <li>Secure SSH deployment using GitHub Secrets</li>
-          </ul>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {[
+            "Docker",
+            "Kubernetes",
+            "AWS EC2",
+            "Linux",
+            "Jenkins",
+            "GitHub Actions",
+            "Nginx",
+            "Terraform",
+            "Prometheus",
+            "Grafana",
+            "Ansible",
+            "CI/CD",
+          ].map((tool) => (
+            <div
+              key={tool}
+              className="p-4 bg-[#141a21] border border-gray-700 rounded-lg text-center hover:border-green-400 hover:scale-105 transition"
+            >
+              {tool}
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="max-w-5xl mx-auto text-center">
-        <h3 className="text-3xl font-semibold mb-6 text-purple-400">Connect with Me</h3>
+      {/* PROJECTS SECTION */}
+      <section className="mt-20 max-w-5xl mx-auto">
+        <h2 className="text-4xl font-bold text-yellow-400 mb-6 text-center">
+          ⭐ Featured Projects
+        </h2>
 
-        <div className="flex justify-center gap-8 mt-4 text-xl">
-          <a href="https://www.linkedin.com/in/nilay-chavhan-272271188"
-             target="_blank"
-             className="hover:text-blue-400 transition">LinkedIn</a>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="bg-[#161b22] p-6 border border-gray-700 rounded-xl hover:scale-105 transition shadow-xl">
+            <h3 className="text-xl font-bold mb-2">Production CI/CD Pipeline</h3>
+            <p className="text-gray-400">
+              Automated deployment pipeline using GitHub Actions, Docker, and AWS EC2.
+              Every push → auto build → auto deploy → zero downtime.
+            </p>
+          </div>
 
-          <a href="https://github.com/nilay866"
-             target="_blank"
-             className="hover:text-gray-300 transition">GitHub</a>
-
-          <a href="mailto:nilaychavhan@gmail.com"
-             className="hover:text-green-400 transition">Email</a>
+          <div className="bg-[#161b22] p-6 border border-gray-700 rounded-xl hover:scale-105 transition shadow-xl">
+            <h3 className="text-xl font-bold mb-2">Monitoring Stack</h3>
+            <p className="text-gray-400">
+              Setup Prometheus + Grafana monitoring stack for real-time system metrics.
+            </p>
+          </div>
         </div>
       </section>
 
-      <footer className="text-center text-gray-600 mt-16">
-        © {new Date().getFullYear()} Nilay Chavhan • DevOps Portfolio  
+      {/* CERTIFICATIONS */}
+      <section className="mt-20 max-w-4xl mx-auto">
+        <h2 className="text-4xl font-bold text-purple-400 text-center mb-6">
+          🎓 Certifications
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {["AWS Cloud Practitioner", "Docker & Kubernetes Mastery"].map((cert) => (
+            <div
+              key={cert}
+              className="p-5 bg-[#141a21] border border-gray-700 rounded-xl hover:border-purple-400 transition"
+            >
+              {cert}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="text-center text-gray-500 mt-16 py-6">
+        © {new Date().getFullYear()} Nilay Chavhan • DevOps Engineer  
       </footer>
     </div>
   );
