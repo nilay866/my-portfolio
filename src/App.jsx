@@ -1,58 +1,81 @@
-import "./App.css";
-import profile from "./assets/profile.jpg";
-import Navbar from "./components/Navbar";
-import Skills from "./components/Skills";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-
 function App() {
   return (
-    <>
-      <Navbar />
+    <div style={styles.container}>
+      <h1 style={styles.title}>Hi, I'm <span style={styles.name}>Nilay Chavhan</span> 👋</h1>
 
-      {/* HERO SECTION */}
-      <section id="home" className="hero">
-        <div className="hero-left">
-          <h1>Hello, I'm <span className="highlight">Nilay Chavhan</span> 👋</h1>
-          <h2 className="subtitle">DevOps Engineer | AWS | Docker | CI/CD | Linux</h2>
+      <h2 style={styles.subtitle}>DevOps Engineer | AWS | Docker | Linux | CI/CD</h2>
 
-          <p className="summary">
-            I specialize in automating cloud infrastructure, building CI/CD pipelines, 
-            and deploying production-ready applications using AWS, Docker, GitHub Actions, 
-            and Nginx. Passionate about scaling and performance.
-          </p>
+      <p style={styles.about}>
+        I am a DevOps engineer passionate about automation, cloud infrastructure,
+        CI/CD pipelines, containerization, and infrastructure as code.
+      </p>
 
-          <div className="hero-buttons">
-            <a href="#projects" className="btn-primary">View Projects</a>
-            <a href="#contact" className="btn-secondary">Contact Me</a>
-          </div>
-        </div>
+      <h2 style={styles.sectionTitle}>Skills</h2>
+      <ul style={styles.list}>
+        <li>AWS EC2, S3, IAM</li>
+        <li>Docker & Docker Compose</li>
+        <li>Linux & Shell Scripting</li>
+        <li>Nginx Reverse Proxy</li>
+        <li>GitHub Actions (CI/CD)</li>
+        <li>Python Basics</li>
+      </ul>
 
-        <div className="hero-right">
-          <img src={profile} alt="Nilay" className="profile-img" />
-        </div>
-      </section>
+      <h2 style={styles.sectionTitle}>Projects</h2>
+      <p><strong>DevOps Portfolio Website</strong></p>
+      <p>
+        Built with React + Vite and deployed using Docker on AWS EC2 with CI/CD automation.
+      </p>
 
-      {/* SKILLS */}
-      <section id="skills">
-        <Skills />
-      </section>
-
-      {/* PROJECTS */}
-      <section id="projects">
-        <Projects />
-      </section>
-
-      {/* CONTACT */}
-      <section id="contact">
-        <Contact />
-      </section>
-
-      <footer className="footer">
-        © {new Date().getFullYear()} Nilay Chavhan — DevOps Engineer Portfolio
-      </footer>
-    </>
+      <h2 style={styles.sectionTitle}>Connect With Me</h2>
+      <p>
+        <a style={styles.link} href="https://www.linkedin.com/in/nilay-chavhan-272271188" target="_blank">
+          🔗 LinkedIn Profile
+        </a>
+      </p>
+    </div>
   );
 }
+
+const styles = {
+  container: {
+    maxWidth: '900px',
+    margin: 'auto',
+    padding: '40px',
+    fontFamily: 'Arial, sans-serif',
+    color: '#fff',
+    backgroundColor: '#0a0a0a',
+  },
+  title: {
+    fontSize: '42px',
+    fontWeight: 'bold',
+  },
+  name: {
+    color: '#4fa3ff',
+  },
+  subtitle: {
+    fontSize: '20px',
+    marginTop: '10px',
+    opacity: 0.8,
+  },
+  about: {
+    marginTop: '20px',
+    lineHeight: '1.6',
+    opacity: 0.9,
+  },
+  sectionTitle: {
+    marginTop: '30px',
+    fontSize: '26px',
+    color: '#4fa3ff',
+  },
+  list: {
+    marginTop: '10px',
+    lineHeight: '1.6',
+  },
+  link: {
+    color: '#4fa3ff',
+    textDecoration: 'none',
+    fontSize: '18px',
+  },
+};
 
 export default App;
