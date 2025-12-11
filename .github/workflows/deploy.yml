@@ -2,25 +2,32 @@ name: Deploy to EC2
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Copy clean files to EC2
+      - name: Copy files to EC2 (excluding .git and node_modules)
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ubuntu
           key: ${{ secrets.EC2_SSH_KEY }}
-          source: "./*"
+          source: "./"
           target: "/home/ubuntu/my-portfolio"
-          overwrite: true
+          rm: true
+          strip_components: 0
+          tar_tmp_path: "/tmp"
+          # IMPORTANT: ignore unnecessary folders
+          exclude: |
+            .git/
+            node_modules/
+            .github/
 
       - name: Deploy on EC2
         uses: appleboy/ssh-action@v0.1.6
@@ -30,11 +37,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd /home/ubuntu/my-portfolio
-
-            sudo rm -rf /home/ubuntu/my-portfolio/dist
-
             sudo docker stop portfolio || true
             sudo docker rm portfolio || true
-
             sudo docker build -t my-portfolio .
             sudo docker run -d -p 80:80 --name portfolio my-portfolio
